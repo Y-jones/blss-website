@@ -103,6 +103,61 @@ SCHOOL FACTS:
     - direct visitors to the school's Instagram page or to contact the office directly for that detail.
 - Contact: phone +255 787 112 153, +255 622 700 011, +255 766 614 062. Email:
   bukobalutheran@gmail.com. Instagram: @bukoba_lutheran_secondary.
+- Current ELCT-NWD institutional information lists Bukoba Lutheran Secondary School among ELCT-NWD institutions and describes its emphasis as academic excellence and Christian values.
+- School location is more precisely identified as Bulibata, Buhembe Ward, Bukoba Municipal Council, Kagera Region, Tanzania. Public map data also places the school in Buhembe, Bukoba and provides approximate coordinates of -1.27916, 31.80112.
+- A current public map/business listing independently confirms the school in Buhembe and lists phone number +255 766 614 062.
+- The 2026 ELCT calendar identifies Mwl. Ludovick James as the current Head of School. It also lists a school office telephone +255 28 222 0027, mobile +255 626 863 898, and P.O. Box 98, Bukoba.
+- Fidelis Kabigiza was a historical headmaster during the 2012–2014 period and should not be presented as the current head of school.
+- Historical GPEN information described BLSS as a co-educational ordinary-level school and reported approximately 330 students in 2014. This is historical enrollment and must not be presented as current enrollment.
+- No reliable public source has established the school's exact founding year. Do not invent or infer a founding year.
+
+ACADEMIC RESULTS — CSEE:
+- CSEE 2025 official NECTA result: 89 candidates registered, 88 sat, 88 passed, centre GPA 2.0704 (Grade B, Very Good). Division I: 46; Division II: 39; Division III: 3; Division IV: 0; Division 0: 0.
+- CSEE 2024 official NECTA result: 108 candidates; Division I: 52; Division II: 43; Division III: 13; Division IV: 0; Division 0: 0.
+- CSEE 2023 official NECTA result: 51 candidates; Division I: 10; Division II: 27; Division III: 13; Division IV: 1; Division 0: 0.
+- Historical CSEE records publicly indexed for BLSS extend back to 2008, with available records for 2008–2013 and 2015–2025. Historical results are not current performance indicators.
+
+CSEE 2025 SUBJECT PERFORMANCE:
+- Civics: GPA 3.1023, Grade C (Good).
+- History: GPA 2.7614, Grade C (Good).
+- Geography: GPA 2.1477, Grade B (Very Good).
+- Bible Knowledge: GPA 2.8485, Grade C (Good).
+- Kiswahili: GPA 2.5341, Grade B (Very Good).
+- English Language: GPA 2.0341, Grade B (Very Good).
+- French Language: GPA 3.6364, Grade D (Satisfactory).
+- Literature in English: GPA 2.1296, Grade B (Very Good).
+- Physics: GPA 2.9545, Grade C (Good).
+- Chemistry: GPA 2.7051, Grade C (Good).
+- Biology: GPA 3.0000, Grade C (Good).
+- Basic Mathematics: GPA 2.6136, Grade C (Good).
+- NECTA records 100% pass in the listed 2025 subjects except Basic Mathematics, where 83 of 88 candidates passed.
+
+ACADEMIC RESULTS — FTNA:
+- FTNA 2025: Division I 32; Division II 38; Division III 25; Division IV 7; Division 0 0; total 102 candidates.
+- FTNA 2024: Division I 26; Division II 27; Division III 17; Division IV 14; Division 0 0; total 84 candidates.
+- FTNA 2023: Division I 33; Division II 29; Division III 34; Division IV 20; Division 0 0; total 116 candidates.
+
+GERMANY PARTNERSHIP — HISTORICAL:
+- BLSS has a documented historical school partnership with Evangelisches Gymnasium Werther (EGW), Germany, beginning around 2012.
+- Public German school records document exchange/visit activity in 2012 and later cooperation; existing BLSS research also records exchange visits in 2014 and 2018.
+- The partnership supported development work including water storage/rainwater collection and early computer/ICT provision.
+- Historical 2012 documentation identifies Fidelis Kabigiza as headmaster and Sr. Sperancia Thadeo as international coordinator.
+- The current status of the Germany partnership in 2026 has not been independently verified. Describe it as a documented historical partnership unless the school confirms that it remains active.
+
+EDUCATION LEVEL — IMPORTANT CURRENT DISCREPANCY:
+- Historical and current examination evidence strongly supports Form I–IV / Ordinary Level (O-Level) and CSEE provision.
+- The current ELCT-NWD institutional page also states that BLSS offers ordinary and advanced-level secondary education.
+- Current 2026 Form Five selection evidence was found for BLSS graduates, but an independently verified current Form V–VI intake/programme at BLSS was not established.
+- Therefore, do not state as an unquestioned fact that BLSS currently operates Form V–VI. If asked, report the ELCT-NWD statement and note that current operational Advanced-Level intake has not been independently verified.
+
+ADMISSIONS / FEES — HISTORICAL 2026 INFORMATION:
+- The 2026 Pre-Form One Course announcement stated that the course ran from 14 September 2026 to 12 December 2026.
+- The stated fee was TSh 200,000 for boarding students and TSh 150,000 for day students.
+- The announcement stated that the Form One 2027 entrance test was scheduled for 12 September 2026 at centres across Kagera and Shinyanga, including Bukoba Municipal, Bukoba Vijijini, Kyerwa, Missenyi, Muleba, Karagwe, Biharamulo, Ngara, Chato and Shinyanga.
+- As of 2 October 2026 these dates are past. Treat them as 2026 historical admissions information unless a newer school announcement replaces them.
+- Full current annual school fees, boarding charges, uniforms, meals, books, transport and other charges have not been reliably verified. Never guess these.
+
+
 
 GETTING TO BUKOBA (for visitors travelling from elsewhere):
 - By air: Bukoba Airport (IATA code BKZ) is on Sokoine Road in Bukoba town. Air Tanzania and
@@ -216,3 +271,5 @@ app.listen(PORT, () => {
   console.log(`Model: ${GROQ_MODEL}`);
   console.log(`Allowed origin(s): ${ALLOWED_ORIGIN}`);
 });
+
+
