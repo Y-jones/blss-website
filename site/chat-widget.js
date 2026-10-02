@@ -132,15 +132,64 @@
     renderQuick();
   }
 
-  function addMsg(role, text) {
-    const body = document.getElementById("chatBody");
-    const div = document.createElement("div");
-    div.className = "chat-msg " + (role === "user" ? "user" : "bot");
-    div.textContent = text;
-    body.appendChild(div);
-    body.scrollTop = body.scrollHeight;
-    return div;
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function renderMarkdown(raw) {
+  // 1. Escape everything first - the model's text can NEVER inject real HTML.
+  let text = escapeHtml(raw);
+
+  // 2. Bold: **text**
+  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+  // 3. Turn consecutive "- " or "* " lines into a <ul>, and "1. " lines into a <ol>.
+  const lines = text.split("\n");
+  let html = "";
+  let listType = null; // "ul" | "ol" | null
+
+  function closeList() {
+    if (listType) {
+      html += listType === "ul" ? "</ul>" : "</ol>";
+      listType = null;
+    }
   }
+
+  lines.forEach((line) => {
+    const bullet = line.match(/^\s*[-*]\s+(.*)/);
+    const numbered = line.match(/^\s*\d+\.\s+(.*)/);
+
+    if (bullet) {
+      if (listType !== "ul") { closeList(); html += "<ul>"; listType = "ul"; }
+      html += "<li>" + bullet[1] + "</li>";
+    } else if (numbered) {
+      if (listType !== "ol") { closeList(); html += "<ol>"; listType = "ol"; }
+      html += "<li>" + numbered[1] + "</li>";
+    } else {
+      closeList();
+      if (line.trim() !== "") html += "<p>" + line + "</p>";
+    }
+  });
+  closeList();
+
+  return html;
+}
+
+  function addMsg(role, text) {
+  const body = document.getElementById("chatBody");
+  const div = document.createElement("div");
+  div.className = "chat-msg " + (role === "user" ? "user" : "bot");
+  if (role === "user") {
+    div.textContent = text;
+  } else {
+    div.innerHTML = renderMarkdown(text);
+  }
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+  return div;
+}
 
   async function sendChat() {
     const input = document.getElementById("chatInput");

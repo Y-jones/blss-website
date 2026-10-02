@@ -62,3 +62,11 @@
   .chat-panel{right:12px;left:12px;width:auto;bottom:86px;}
   .chat-fab{right:16px;bottom:16px;}
 }
+.chat-msg.bot p{margin:0 0 6px;color:var(--chat-ink);}
+.chat-msg.bot p:last-child{margin-bottom:0;}
+.chat-msg.bot ul,.chat-msg.bot ol{margin:4px 0 6px;padding-left:18px;color:var(--chat-ink);}
+.chat-msg.bot li{margin-bottom:2px;color:var(--chat-ink);}
+.chat-msg.bot strong{font-weight:700;color:var(--chat-ink);}
+
+.chat-quick button{color:var(--chat-ink);}
+.chat-foot{color:var(--chat-ink-soft);}
