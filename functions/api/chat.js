@@ -1,8 +1,6 @@
-// BLSS Assistant - Netlify Function version of server/server.js
-// Runs at /api/chat on the same domain as the website (no CORS needed).
-// Set GROQ_API_KEY (and optionally GROQ_MODEL) in Netlify > Site configuration > Environment variables.
-
-const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+// BLSS Assistant - Cloudflare Pages Function version of server/server.js
+// Lives at functions/api/chat.js and is served at /api/chat on the same domain as the site.
+// Set GROQ_API_KEY (as a Secret) in Cloudflare Pages > Settings > Variables and Secrets.
 
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), {
@@ -170,21 +168,18 @@ Write ONLY the assistant's reply text. No labels, no markdown headers, no quotat
 // Body: { messages: [{role, content}, ...], lang?: "en"|"sw" }
 // Response: { reply: string }
 // ---------------------------------------------------------------------
-export default async (req) => {
-  if (req.method !== "POST") {
-    return json({ error: "Method not allowed" }, 405);
-  }
-
-  const GROQ_API_KEY = process.env.GROQ_API_KEY;
+export async function onRequestPost({ request, env }) {
+  const GROQ_API_KEY = env.GROQ_API_KEY;
+  const GROQ_MODEL = env.GROQ_MODEL || "llama-3.3-70b-versatile";
   if (!GROQ_API_KEY) {
-    console.error("GROQ_API_KEY is not set in Netlify environment variables.");
+    console.error("GROQ_API_KEY is not set.");
     return json({ error: "Server is not configured." }, 500);
   }
 
   try {
     let body;
     try {
-      body = await req.json();
+      body = await request.json();
     } catch {
       return json({ error: "Invalid JSON" }, 400);
     }
@@ -234,6 +229,4 @@ export default async (req) => {
     console.error("Unexpected /api/chat error:", err);
     return json({ error: "Unexpected server error." }, 500);
   }
-};
-
-export const config = { path: "/api/chat" };
+}
