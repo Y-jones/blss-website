@@ -170,7 +170,7 @@ Write ONLY the assistant's reply text. No labels, no markdown headers, no quotat
 // ---------------------------------------------------------------------
 async function handleChat(request, env) {
   const GROQ_API_KEY = env.GROQ_API_KEY;
-  const GROQ_MODEL = env.GROQ_MODEL || "llama-3.3-70b-versatile";
+  const GROQ_MODEL = env.GROQ_MODEL || "openai/gpt-oss-120b";
   if (!GROQ_API_KEY) {
     console.error("GROQ_API_KEY is not set.");
     return json({ error: "Server is not configured." }, 500);
@@ -211,7 +211,9 @@ async function handleChat(request, env) {
         model: GROQ_MODEL,
         messages: [{ role: "system", content: buildSystemPrompt(lang) }, ...cleanMessages],
         temperature: 0.4,
-        max_tokens: 400,
+        // Reasoning models spend part of this budget on thinking, so keep it generous.
+        max_tokens: 1500,
+        ...(GROQ_MODEL.includes("gpt-oss") ? { reasoning_effort: "low" } : {}),
       }),
     });
 
