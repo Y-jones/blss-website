@@ -126,8 +126,8 @@
   function greet() {
     const msg =
       lang === "en"
-        ? "Habari! I'm the BLSS Assistant. Ask me about our school."
-        : "Habari! Mimi ni Msaidizi wa BLSS. Niulize kuhusu shule yetu.";
+        ? "Habari! I'm the BLSS Assistant. How can I help you?"
+        : "Habari! Mimi ni Msaidizi wa BLSS. Nikusaidieje?";
     addMsg("bot", msg);
     renderQuick();
   }
